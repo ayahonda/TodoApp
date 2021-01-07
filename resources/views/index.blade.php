@@ -8,7 +8,14 @@
 </head>
 <body>
 <div class="header">
-  <h1>Hello World!</h1>
+</div>
+<div class="main">
+  <div class="left-content">
+    <h3>Add Task</h3>
+  </div>
+  <div class="right-content">
+    <h3>List</h3>
+  </div>
 </div>
   
 </body>
