@@ -2,6 +2,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|task|string|null: false|
+|name|string|null: false|
 
 ### Association
