@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// タスク一覧表示
+Route::get('/', 'TasksController@index');
+
+// 新規タスクの作成
+Route::post('/task', 'TasksController@store')->name('task.store');
