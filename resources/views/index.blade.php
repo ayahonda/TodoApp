@@ -12,9 +12,19 @@
 <div class="main">
   <div class="left-content">
     <h3>Add Task</h3>
+    <form method="POST" action="{{route('task.store')}}">
+      @csrf
+      <input class="input-group" type="text" name="name" placeholder="タスクを追加">
+      <input class="btn btn-primary" type="submit" value="追加">
+    </form>
   </div>
   <div class="right-content">
     <h3>List</h3>
+    @foreach($tasks as $task)
+    <li class="task-list">
+      {{$task->name}}
+    </li>
+    @endforeach
   </div>
 </div>
   
