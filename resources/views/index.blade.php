@@ -21,9 +21,13 @@
   <div class="right-content">
     <h3>List</h3>
     @foreach($tasks as $task)
-    <li class="task-list">
-      {{$task->name}}
-    </li>
+    <form method="POST" action="/task/destroy/{{$task->id}}">
+      @csrf
+      <li class="task-list">
+        {{$task->name}}
+        <input class="btn btn-delete" type="submit" value="削除"></button>
+      </li>
+    </form>
     @endforeach
   </div>
 </div>

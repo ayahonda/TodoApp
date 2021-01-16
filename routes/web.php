@@ -20,3 +20,6 @@ Route::get('/', 'TasksController@index');
 
 // 新規タスクの作成
 Route::post('/task', 'TasksController@store')->name('task.store');
+
+// タスクを削除
+Route::post('/task/destroy/{id}', 'TasksController@destroy');

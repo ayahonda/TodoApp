@@ -15,6 +15,14 @@ class TasksController extends Controller
         return redirect('/');
     }//
 
+    public function destroy($id) {
+        Task::find($id)->delete();
+
+        return redirect('/');
+    }//
+
+
+
     public function index(Request $request) {
         $tasks = Task::all();
     
