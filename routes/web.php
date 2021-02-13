@@ -24,6 +24,13 @@ Route::post('/task', 'TasksController@store')->name('task.store');
 // タスクを削除
 Route::post('/task/destroy/{id}', 'TasksController@destroy');
 
+// タスクを完了に
+Route::post('/task/done/{id}', 'TasksController@done');
+
+// 完了にあるタスクをListにもどす
+Route::post('/task/reset/{id}', 'TasksController@reset');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
