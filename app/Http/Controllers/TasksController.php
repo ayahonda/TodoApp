@@ -10,6 +10,7 @@ class TasksController extends Controller
     public function store(Request $request) {
         $task = new Task;
         $task->name = $request->input('name');
+        $task->status = 'doing';
         $task->save();
 
         return redirect('/');
@@ -31,7 +32,7 @@ class TasksController extends Controller
 
     public function reset($id) {
         $done_task = Task::find($id);
-        $done_task->status = null;
+        $done_task->status = 'doing';
         $done_task->save();
 
         return redirect('/');
@@ -39,7 +40,7 @@ class TasksController extends Controller
 
 
     public function index(Request $request) {
-        $tasks = Task::whereNull('status')->get();
+        $tasks = Task::where('status', 'doing')->get();
         $done_tasks = Task::where('status', 'done')->get();
     
         return view('index', [
